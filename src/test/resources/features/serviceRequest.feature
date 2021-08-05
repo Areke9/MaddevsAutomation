@@ -13,5 +13,5 @@ Feature: Checking request for company service
     Given check for an open website
     Then switch to menu tab 'Services'
     Then make a request for service 'Remote Tech Staff'
-    Then fill and service request form 'INIVIDUALS'
+    Then fill and service request form 'INDIVIDUALS'
     And check success message 'Thanks for your'

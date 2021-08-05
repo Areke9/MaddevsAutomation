@@ -43,7 +43,7 @@ public class ServicesPageService extends CommonService implements ServiceRequest
                 fillSendTeamService();
                 break;
 
-            case INIVIDUALS:
+            case INDIVIDUALS:
                 fillSendIndividualService();
                 break;
         }
