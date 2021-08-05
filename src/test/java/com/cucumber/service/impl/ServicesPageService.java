@@ -1,13 +1,16 @@
-package com.cucumber.service;
+package com.cucumber.service.impl;
 
 import com.cucumber.exception.ElementNotCompareException;
 import com.cucumber.page.ServicePage;
+import com.cucumber.page.ServiceType;
+import com.cucumber.service.CommonService;
+import com.cucumber.service.ServiceRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServicesPageService extends CommonService {
+public class ServicesPageService extends CommonService implements ServiceRequestService {
 
     @Autowired
     private ServicePage servicePage;
@@ -27,23 +30,26 @@ public class ServicesPageService extends CommonService {
     @Value("${text.expertise}")
     private String expertise;
 
+    @Override
     public void requestService(String service) {
         clickElementFromList(servicePage.getElementsList(), "servicesList", service);
     }
 
-    public void fillSendForm(String form){
+    @Override
+    public void fillSendForm(ServiceType serviceType){
 
-        switch (form){
-            case "Teams":
+        switch (serviceType){
+            case TEAMS:
                 fillSendTeamService();
                 break;
 
-            case "Individuals":
+            case INIVIDUALS:
                 fillSendIndividualService();
                 break;
         }
     }
 
+    @Override
     public void getSuccessMessage(String message){
         String successMessage = getText(servicePage, "successMessage");
 

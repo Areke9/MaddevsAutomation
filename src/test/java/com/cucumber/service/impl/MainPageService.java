@@ -1,15 +1,17 @@
-package com.cucumber.service;
+package com.cucumber.service.impl;
 
 
 import com.codeborne.selenide.SelenideElement;
 import com.cucumber.exception.ElementNotCompareException;
 import com.cucumber.page.MainPage;
+import com.cucumber.service.CommonService;
+import com.cucumber.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MainPageService extends CommonService {
+public class MainPageService extends CommonService implements MainService {
 
     @Autowired
     private MainPage mainPage;
@@ -17,6 +19,7 @@ public class MainPageService extends CommonService {
     @Value("${text.maintext}")
     private String mainText;
 
+    @Override
     public void getMainText(){
         String mText = getText(mainPage, "mainText");
         SelenideElement accepBtn = getFromMap(mainPage.getElements(), "acceptBtn");
@@ -34,6 +37,7 @@ public class MainPageService extends CommonService {
 
     }
 
+    @Override
     public void switchToMenuTab(String tab){
         clickElementFromList(mainPage.getElementsList(), "headerMenuTabs", tab);
     }

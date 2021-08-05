@@ -1,6 +1,6 @@
 package com.cucumber.steps;
 
-import com.cucumber.service.MainPageService;
+import com.cucumber.service.MainService;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MainPageStep {
 
     @Autowired
-    private MainPageService mainPageService;
+    private MainService mainService;
 
     @Given("check for an open website")
     public void inputTextInToSearchField() {
-        mainPageService.getMainText();
+        mainService.getMainText();
     }
 
     @Then("switch to menu tab '(.*)'")
     public void switchToTab(String tab){
-        mainPageService.switchToMenuTab(tab);
+        mainService.switchToMenuTab(tab);
     }
 }

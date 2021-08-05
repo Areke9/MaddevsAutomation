@@ -5,7 +5,7 @@ Feature: Checking request for company service
     Given check for an open website
     Then switch to menu tab 'Services'
     Then make a request for service 'Remote Tech Staff'
-    Then fill and service request form 'Teams'
+    Then fill and service request form 'TEAMS'
     And check success message 'Thanks for your'
 
   @requestToGetIndividuals
@@ -13,5 +13,5 @@ Feature: Checking request for company service
     Given check for an open website
     Then switch to menu tab 'Services'
     Then make a request for service 'Remote Tech Staff'
-    Then fill and service request form 'Individuals'
+    Then fill and service request form 'INIVIDUALS'
     And check success message 'Thanks for your'
