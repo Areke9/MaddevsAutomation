@@ -16,7 +16,7 @@ public class ServicePageStep {
         serviceRequestService.requestService(service);
     }
 
-    @Then("fill and service request form '(.*)'")
+    @Then("fill and send service request form '(.*)'")
     public void fillAndSendForm(ServiceType form) {
         serviceRequestService.fillSendForm(form);
     }

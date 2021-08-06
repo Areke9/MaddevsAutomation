@@ -40,11 +40,11 @@ public class ServicesPageService extends CommonService implements ServiceRequest
 
         switch (serviceType){
             case TEAMS:
-                fillSendTeamService();
+                fillSendTeamServiceForm();
                 break;
 
             case INDIVIDUALS:
-                fillSendIndividualService();
+                fillSendIndividualServiceForm();
                 break;
         }
     }
@@ -62,7 +62,7 @@ public class ServicesPageService extends CommonService implements ServiceRequest
         }
     }
 
-    private void fillSendTeamService(){
+    private void fillSendTeamServiceForm(){
         isElementDisplayed(servicePage, "serviceTeamFormBtn");
         clickButton(servicePage, "serviceTeamFormBtn");
         isElementVisible(servicePage, "clientFullName");
@@ -76,7 +76,7 @@ public class ServicesPageService extends CommonService implements ServiceRequest
         clickButton(servicePage, "sendRequestServiceBtn");
     }
 
-    private void fillSendIndividualService(){
+    private void fillSendIndividualServiceForm(){
         isElementDisplayed(servicePage, "serviceIndividualFormBtn");
         clickButton(servicePage, "serviceIndividualFormBtn");
         isElementVisible(servicePage, "clientFullName");
